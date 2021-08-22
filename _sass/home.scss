@@ -1,0 +1,29 @@
+.take-care {
+  .label{
+    border-radius: 100%;
+  }
+  .cc-card:hover{
+    box-shadow: 0 16px 85px 0 rgba(189, 223, 246, 0.45);
+  }
+  .cc-card:nth-of-type(1){
+    .label {
+      background: #f4dda0;
+    }
+  }
+  .cc-card:nth-of-type(2){
+    .label {
+      background: #bcd5fc;
+    }
+  }
+  .cc-card:nth-of-type(3){
+    .label {
+      background: #fac2cf;
+    }
+  }
+}
+.our-number{
+  @include btn(216px,59px,30px,#6246e4,white,0)
+}
+.form-btn{
+  @include btn(117px,60px,30px,white,$dark,0)
+}

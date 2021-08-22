@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="129" height="33" viewBox="0 0 129 33">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <text fill="#FFF" font-family="Gilroy-Bold" font-size="30" transform="translate(-197.000000, -38.000000) translate(197.000000, 38.000000)">
+                    <tspan x="37" y="26">Noren.</tspan>
+                </text>
+                <g>
+                    <path fill="#FCBC14" d="M13 33c8.837 0 16-7.387 16-16.5S21.837 0 13 0" transform="translate(-197.000000, -38.000000) translate(197.000000, 38.000000)"/>
+                    <path fill="#7E67E9" d="M0 33c7.18 0 13-5.596 13-12.5S7.18 8 0 8" transform="translate(-197.000000, -38.000000) translate(197.000000, 38.000000) translate(6.500000, 20.500000) rotate(-180.000000) translate(-6.500000, -20.500000)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

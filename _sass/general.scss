@@ -1,0 +1,78 @@
+.container{
+  margin: auto;
+  max-width: 1140px !important;
+}
+.theme-shadow{
+  box-shadow: 0 16px 85px 0 rgba(189, 223, 246, 0.45);
+}
+.what-say{
+  &:hover{
+    box-shadow: 0 16px 85px 0 rgba(189, 223, 246, 0.45);
+    border: none;
+  }
+}
+.get-post {
+  background: #fcbc14;
+  input{
+    background-color: rgba(255, 255, 255, 0.22);
+    border-radius: 30px;
+
+    &::placeholder{
+      color: white;
+      font-size: 14px;
+    }
+  }
+}
+.mail{
+  bottom: -75px;
+  right: -250px;
+}
+.banner {
+  animation: slide-down 1s forwards;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+}
+
+.animation-rotation{
+  animation: slide-rotate 1s forwards;
+}
+@keyframes slide-rotate {
+  from {
+    transform: rotateX(360deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+.card-rotate{
+  animation: slide-yrotate 3s forwards;
+}
+@keyframes slide-rotate {
+  from {
+    transform: rotateY(360deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+.zoom-img{
+  animation: slide-zoom 3s forwards;
+}
+@keyframes slide-zoom {
+  from {
+    transform: scale(.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}

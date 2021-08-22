@@ -1,0 +1,11 @@
+@mixin btn($width,$height, $rounded, $bg,$col,$br) {
+  width: $width;
+  height: $height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $rounded;
+  background: $bg;
+  color: $col;
+  border: $br;
+}

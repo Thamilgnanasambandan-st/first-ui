@@ -1,0 +1,13 @@
+@import 'mixins/media-queries';
+@import 'mixins/background';
+@import "mixins/buttons";
+@import "navbar";
+@import "bg-hero";
+@import "colors";
+@import "home";
+@import "general";
+
+body{
+  font-family: 'Khula', sans-serif !important;
+  color: $dark !important;
+}

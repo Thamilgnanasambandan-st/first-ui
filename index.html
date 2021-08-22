@@ -1,0 +1,176 @@
+---
+layout: default
+title: Staff
+---
+<section class="bg-secondry">
+    <div class="flex items-center justify-between h-32 container">
+    {% for image in site.static_files %}
+    {% if image.path contains '-logo.' %}
+    <img src="{{ image.path }}" alt="">
+    {% endif %}
+    {% endfor %}
+    </div>
+</section>
+<section class="card-1 my-24">
+    <div class="container">
+        <div class="grid grid-cols-10 justify-around gap-x-20">
+            {% for item in site.data.home.card1 %}
+            <div class="bg-secondry px-4 topanimation invisible	 viewport col-span-3 rounded-3xl py-8">
+                <img src={{ item.link }} class="mx-auto mb-4">
+                <h3 class="font-bold text-2xl text-dark">{{item.title}}</h3>
+                <p class="text-sm text-dark">{{item.content}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="take-care my-24">
+    <div class="container grid grid-cols-2  items-center">
+        <div>
+            <img src="assets/images/take-care.png">
+        </div>
+        <div>
+            {% for item in site.data.home.take-care %}
+            <h1 class="text-6xl pl-6 font-bold tracking-tight leading-none max-w-lg mb-6">{{ item.title }}</h1>
+            <p class="max-w-sm pl-6 text-lg mb-8">{{ item.content }}</p>
+            {% for entry in item.data %}
+            <div class="cc-card grid grid-cols-10 viewport rotate py-8 w-9/12 items-center rounded-3xl   px-6">
+                <div class="col-span-2 relative">
+            <div class="inline-flex label items-center font-bold justify-center z-10 w-16 h-16 text-white">{{ entry.sno }}</div>
+                </div>
+                <div class="text-xl col-span-8 ">{{ entry.content }}</div>
+            </div>
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="my-24">
+    <div class="container grid grid-cols-2 items-center">
+        <div>
+            <h1 class="text-6xl font-bold tracking-tight leading-none	 max-w-lg mb-6">Our numbers</h1>
+            <p class="max-w-sm mb-8 text-base">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <button class="our-number text-xl font-bold">Let's Talk</button>
+        </div>
+        <div>
+            <img src="assets/images/our-number.png" class="zoom scale-50 invisible viewport">
+        </div>
+    </div>
+</section>
+<section class="container py-16">
+    {% for item in site.data.home.from-blog %}
+    <h1 class="font-bold text-4xl mb-4">{{ item.title }}</h1>
+    <div class="grid grid-cols-3 gap-x-8">
+        {% for entry in item.data %}
+        <div class="rounded-3xl border card-rotate viewport invisible overflow-hidden pb-8">
+            <img src="{{ entry.img }}" class="max-w-full	">
+            <div class="px-6 pt-8">
+            <div class="grid grid-cols-2 pb-3">
+                <div><span class="p-3 rounded-full w-8 h-8 inline-flex items-center justify-center text-xs mr-1" style="background: rgba(244, 221, 160, 0.36)"><i class="fas fa-calendar"></i></span><span class="text-sm">{{ entry.date }}</span></div>
+                <div><span class="p-3 rounded-full w-8 h-8 inline-flex items-center justify-center text-xs mr-1" style="background: rgba(160, 223, 244, 0.36)"><i class="far fa-hourglass" ></i></span> <span class="text-sm">{{ entry.min }}</span> </div>
+            </div>
+                <h1 class="text-xl font-semibold mb-3">{{ entry.titel }}</h1>
+            <p class="text-sm">{{ entry.content }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</section>
+<section class="container py-16">
+    <div class="grid grid-cols-10 gap-x-4">
+        {% for item in site.data.home.take-care-2 %}
+        <div class="col-span-3">
+            <img src="assets/images/what-they-say.jpg">
+            <h1 class="text-3xl font-bold">{{ item.title }}</h1>
+            <p class="text-sm">{{ item.content }}</p>
+        </div>
+        {% for entry in item.data %}
+        <div class="col-span-3">
+            <div class="px-4 border what-say  pb-10 pt-3 rounded-2xl hover:theme-shadow">
+            <div class="flex"><img src="{{ entry.img }}" class="w-10 h-10 rounded-full"><h1 class="pl-3 text-base">{{ entry.title }}</h1></div>
+            <p class="text-sm mt-4">{{ entry.content }}</p>
+        </div>
+    </div>
+        {% endfor %}
+        {% endfor %}
+    </div>
+</section>
+<section class="container pt-32">
+    <div class="py-8 px-12 rounded-3xl  get-post">
+        <div class="grid grid-cols-2">
+            <div>
+        <p class="text-3xl text-white tracking-tighter font-bold">Get the pest project estimation</p>
+        <div class="flex mt-3">
+        <input class="w-64  text-white pl-3 bg-transparent bg-opacity-50	" placeholder="Enter your email"> <button class="form-btn ml-3">Send</button>
+        </div>
+                </div>
+            <div class="relative">
+                <img src="assets/images/mailbox.png" class="absolute mail">
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="bg-secondry mt-20">
+<div class="grid container grid-cols-2  py-4">
+    <div>
+        <img src="./assets/images/logo-footer.svg">
+    </div>
+    <div class="text-right font-bold">
+        <p> 2020 © Ghassan Hani</p>
+    </div>
+</div>
+</footer>
+
+<script>
+    var isInViewport = function(elem) {
+        var distance = elem.getBoundingClientRect();
+        return (
+            distance.top >= 0 &&
+            distance.left >= 0 &&
+            distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    };
+    // read the link on how above code works
+
+    var findMe = document.querySelectorAll('.viewport');
+
+    window.addEventListener('scroll', function(event) {
+// add event on scroll
+        findMe.forEach(element => {
+            //for each .thisisatest
+            if(element.classList.contains('topanimation')){
+                if (isInViewport(element)) {
+                    //if in Viewport
+                    element.classList.add("banner");
+                    element.classList.remove("invisible");
+                }
+            }
+            if(element.classList.contains('rotate')){
+                if (isInViewport(element)) {
+                    //if in Viewport
+                    element.classList.add("animation-rotation");
+                }
+            }
+            if(element.classList.contains('zoom')){
+                if (isInViewport(element)) {
+                    console.log("yes")
+                    element.classList.add("zoom-img");
+                    element.classList.remove("scale-50");
+                    element.classList.remove("invisible");
+                }
+            }
+            if(element.classList.contains('card-rotate')){
+                if (isInViewport(element)) {
+                    console.log("yes")
+                    element.classList.add("zoom-img");
+                    element.classList.remove("scale-50");
+                    element.classList.remove("invisible");
+                }
+            }
+
+        });
+    }, false);
+
+</script>zoom

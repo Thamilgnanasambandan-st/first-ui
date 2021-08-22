@@ -1,0 +1,16 @@
+<div class="cc-navbar">
+    <div class="container ">
+        <div class="nav-content">
+            <div class="logo"><img src="../assets/images/logo.svg">
+            </div>
+            <ul>
+                <li><a href="/"> Home</a></li>
+                {% for item in site.other-pages %}
+                <li><a href={{ item.permalink }}>
+                    {{ item.title }}
+                </a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
