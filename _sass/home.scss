@@ -1,3 +1,10 @@
+.bg-hero{
+  @include bg('hero-bg.svg','100%', cover);
+  color: white;
+  button{
+    @include btn(216px,59px,30px,#fff,#2d2d2d,0);
+  }
+}
 .take-care {
   .label{
     border-radius: 100%;

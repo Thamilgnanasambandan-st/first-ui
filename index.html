@@ -1,21 +1,21 @@
 ---
 layout: default
-title: Staff
+title: Static-1
 ---
 <section class="bg-secondry">
-    <div class="flex items-center justify-between h-32 container">
+    <div class="flex items-center justify-between md:h-32 container flex-col md:flex-row">
     {% for image in site.static_files %}
     {% if image.path contains '-logo.' %}
-    <img src="{{ image.path }}" alt="">
+    <img src="{{ image.path }}" alt="" class="my-2 md:my-0">
     {% endif %}
     {% endfor %}
     </div>
 </section>
-<section class="card-1 my-24">
+<section class="card-1 md:my-24">
     <div class="container">
-        <div class="grid grid-cols-10 justify-around gap-x-20">
+        <div class="grid grid-cols-2 md:grid-cols-10 justify-around gap-4 md:gap-x-20">
             {% for item in site.data.home.card1 %}
-            <div class="bg-secondry px-4 topanimation invisible	 viewport col-span-3 rounded-3xl py-8">
+            <div class="bg-secondry px-4 topanimation viewport col-span-1 md:col-span-3 rounded-3xl py-8">
                 <img src={{ item.link }} class="mx-auto mb-4">
                 <h3 class="font-bold text-2xl text-dark">{{item.title}}</h3>
                 <p class="text-sm text-dark">{{item.content}}</p>
@@ -24,17 +24,17 @@ title: Staff
         </div>
     </div>
 </section>
-<section class="take-care my-24">
-    <div class="container grid grid-cols-2  items-center">
-        <div>
+<section class="take-care md:my-24">
+    <div class="container grid grid-cols-1 md:grid-cols-2  items-center">
+        <div class="grid-cols-1">
             <img src="assets/images/take-care.png">
         </div>
-        <div>
+        <div class="grid-cols-1">
             {% for item in site.data.home.take-care %}
             <h1 class="text-6xl pl-6 font-bold tracking-tight leading-none max-w-lg mb-6">{{ item.title }}</h1>
             <p class="max-w-sm pl-6 text-lg mb-8">{{ item.content }}</p>
             {% for entry in item.data %}
-            <div class="cc-card grid grid-cols-10 viewport rotate py-8 w-9/12 items-center rounded-3xl   px-6">
+            <div class="cc-card grid grid-cols-10 viewport rotate py-8 md:w-9/12 items-center rounded-3xl   px-6">
                 <div class="col-span-2 relative">
             <div class="inline-flex label items-center font-bold justify-center z-10 w-16 h-16 text-white">{{ entry.sno }}</div>
                 </div>
@@ -45,14 +45,14 @@ title: Staff
         </div>
     </div>
 </section>
-<section class="my-24">
-    <div class="container grid grid-cols-2 items-center">
-        <div>
+<section class="md:my-24">
+    <div class="container grid grid-cols-1 md:grid-cols-2 items-center">
+        <div class="grid-cols-1">
             <h1 class="text-6xl font-bold tracking-tight leading-none	 max-w-lg mb-6">Our numbers</h1>
             <p class="max-w-sm mb-8 text-base">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
       <button class="our-number text-xl font-bold">Let's Talk</button>
         </div>
-        <div>
+        <div class="grid-cols-1">
             <img src="assets/images/our-number.png" class="zoom scale-50 invisible viewport">
         </div>
     </div>
@@ -60,10 +60,10 @@ title: Staff
 <section class="container py-16">
     {% for item in site.data.home.from-blog %}
     <h1 class="font-bold text-4xl mb-4">{{ item.title }}</h1>
-    <div class="grid grid-cols-3 gap-x-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 md:gap-x-8">
         {% for entry in item.data %}
-        <div class="rounded-3xl border card-rotate viewport invisible overflow-hidden pb-8">
-            <img src="{{ entry.img }}" class="max-w-full	">
+        <div class="rounded-3xl border card-rotate viewport md:invisible overflow-hidden pb-8 col-span-1">
+            <img src="{{ entry.img }}" class="max-w-full">
             <div class="px-6 pt-8">
             <div class="grid grid-cols-2 pb-3">
                 <div><span class="p-3 rounded-full w-8 h-8 inline-flex items-center justify-center text-xs mr-1" style="background: rgba(244, 221, 160, 0.36)"><i class="fas fa-calendar"></i></span><span class="text-sm">{{ entry.date }}</span></div>
@@ -78,7 +78,7 @@ title: Staff
     {% endfor %}
 </section>
 <section class="container py-16">
-    <div class="grid grid-cols-10 gap-x-4">
+    <div class="grid grid-cols-3 md:grid-cols-10 md:gap-x-4">
         {% for item in site.data.home.take-care-2 %}
         <div class="col-span-3">
             <img src="assets/images/what-they-say.jpg">
@@ -99,14 +99,14 @@ title: Staff
 <section class="container pt-32">
     <div class="py-8 px-12 rounded-3xl  get-post">
         <div class="grid grid-cols-2">
-            <div>
+            <div >
         <p class="text-3xl text-white tracking-tighter font-bold">Get the pest project estimation</p>
         <div class="flex mt-3">
         <input class="w-64  text-white pl-3 bg-transparent bg-opacity-50	" placeholder="Enter your email"> <button class="form-btn ml-3">Send</button>
         </div>
                 </div>
             <div class="relative">
-                <img src="assets/images/mailbox.png" class="absolute mail">
+                <img src="assets/images/mailbox.png" class="absolute mail hidden md:inline-block">
             </div>
         </div>
     </div>
@@ -166,7 +166,7 @@ title: Staff
                     console.log("yes")
                     element.classList.add("zoom-img");
                     element.classList.remove("scale-50");
-                    element.classList.remove("invisible");
+                    element.classList.remove("md:invisible");
                 }
             }
 
